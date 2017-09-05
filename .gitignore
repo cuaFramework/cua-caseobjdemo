@@ -1,0 +1,11 @@
+
+#  IDEA Files #
+
+*.iml
+*.ipr
+*.iws
+*.idea
+*.history
+
+__pycache__
+arbiter-cases/
