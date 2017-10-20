@@ -19,8 +19,7 @@ COOKIES = {}
 
 def get_response(req_type="POST", url=None, data=None, headers=DEFAULT_HEADER):
     """ http请求 """
-    LOGGER.info(url + " " + str(data) + " " + str(COOKIES))
-
+   # LOGGER.info(url + " " + str(data) + " " + str(COOKIES))
     try:
         if req_type.upper() == "POST":
             r = requests.post(url=url, data=data, headers=headers, allow_redirects=True, cookies=COOKIES)
@@ -31,9 +30,12 @@ def get_response(req_type="POST", url=None, data=None, headers=DEFAULT_HEADER):
             r = requests.get(url=url + "?" + "&".join(param_list), data={}, headers=headers, allow_redirects=True, cookies=COOKIES)
         else:
             raise TypeError("http method error")
+        dur = r.elapsed.microseconds / 1000
     except (requests.exceptions.ConnectionError, TypeError) as e:
         LOGGER.error("send request fail " + str(e))
         return None
+    finally:
+        LOGGER.info(url + " " + str(data) + " " + str(COOKIES) +" 耗时:"+str(dur)+"ms")
 
     if r.status_code == requests.codes.ok:
         # LOGGER.info(r.text)

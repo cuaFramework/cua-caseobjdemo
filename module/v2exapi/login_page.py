@@ -36,18 +36,6 @@ class LoginPage(object):
                     once = param.contents[3].contents[0]['value']
                     break
         return dict(username=username,pwd=pwd,once=once)
-                # 断言
-                # errors = []
-                # logger.info("判断列表长度是否大于0")
-                # if len(member_hobby_name) == 0:
-                #     errors.append("列表为空")
-                # member_hobby_name_contains_str = "闲聊"
-                # logger.info("判断列表中是否包含特定名称:" + member_hobby_name_contains_str)
-                #
-                # if not any(member_hobby_name_contains_str in s for s in member_hobby_name):
-                #     errors.append("列表中不包含特定字段:" + member_hobby_name_contains_str)
-                # assert not errors, "出现以下错误:\n".join(errors)
-
 
 if __name__ == "__main__":
     x = LoginPage()

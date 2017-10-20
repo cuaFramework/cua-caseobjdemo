@@ -1,33 +1,22 @@
 # -*- coding: utf-8 -*-
 # from utils.arbiter_logger import LOGGER
+import unittest
+
 import utils.arbiter_logger
 from api.v2exapi import V2exapi
-from bs4 import BeautifulSoup
-
 from module.v2exapi.login_page import LoginPage
 
 
-class TestLogin():
-    def set_up(self):
-        """ 所有case运行前执行此方法 """
-        pass
-
-    def tear_down(self):
-        """ 所有case运行后执行此方法 """
-        pass
-
-    def __init__(self):
+class TestLogin(unittest.TestCase):
+    @classmethod
+    def setUpClass (self):
         test_env = "prod"
         self.v2exapi = V2exapi(test_env)
         self.login_page = LoginPage(test_env)
 
-    def set_up(self):
-        """ 每个case执行前执行此方法 """
-        pass
-
-    def tear_down(self):
-        """ 每个case执行后执行此方法 """
-        pass
+    @classmethod
+    def tearDownClass(cls):
+      pass
 
     def test_login(self):
         """V2EX登陆测试"""
