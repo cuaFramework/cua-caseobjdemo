@@ -35,7 +35,7 @@ def get_response(req_type="POST", url=None, data=None, headers=DEFAULT_HEADER):
         LOGGER.error("send request fail " + str(e))
         return None
     finally:
-        LOGGER.info(url + " " + str(data) + " " + str(COOKIES) +" 耗时:"+str(dur)+"ms")
+        LOGGER.info(url + " " + str(data) + " " + str(COOKIES) +" 请求类型:"+req_type.upper()+" 耗时:"+str(dur)+"ms"+" 返回码:"+str(r.status_code))
 
     if r.status_code == requests.codes.ok:
         # LOGGER.info(r.text)
@@ -48,7 +48,7 @@ def get_response(req_type="POST", url=None, data=None, headers=DEFAULT_HEADER):
 
         return r.text
     else:
-        LOGGER.error("status code " + str(r.status_code))
+       # LOGGER.error("status code " + str(r.status_code))
         return None
 
 
