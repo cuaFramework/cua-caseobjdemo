@@ -9,14 +9,14 @@ from module.v2exapi.login_page import LoginPage
 
 class TestLogin(unittest.TestCase):
     @classmethod
-    def setUpClass (self):
+    def setUpClass(cls):
         test_env = "prod"
-        self.v2exapi = V2exapi(test_env)
-        self.login_page = LoginPage(test_env)
+        cls.v2exapi = V2exapi(test_env)
+        cls.login_page = LoginPage(test_env)
 
     @classmethod
     def tearDownClass(cls):
-      pass
+        pass
 
     def test_login(self):
         """V2EX登陆测试1123112312312323123"""

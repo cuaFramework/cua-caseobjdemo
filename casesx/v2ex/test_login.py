@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 # from utils.arbiter_logger import LOGGER
 import unittest
-
 import utils.arbiter_logger
 from api.v2exapi import V2exapi
 from module.v2exapi.login_page import LoginPage
