@@ -5,6 +5,7 @@
 *.ipr
 *.iws
 *.idea
+*.log
 *.history
 
 __pycache__

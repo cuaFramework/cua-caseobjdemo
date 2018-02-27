@@ -56,7 +56,7 @@ def get_district_code():
     """
     from config.config import DISTRICT_CODE_PATH
 
-    with open(DISTRICT_CODE_PATH,encoding='utf-8') as file:
+    with open(DISTRICT_CODE_PATH, encoding='utf-8') as file:
         data = file.read()
         district_list = data.split('\n')
     for node in district_list:
@@ -87,6 +87,7 @@ def create_data_list(num, create_item=None, fun=None):
         data_list.append(item)
         num -= 1
     return data_list
+
 
 if __name__ == '__main__':
     lst = list('ABeeE11122134453645756967')

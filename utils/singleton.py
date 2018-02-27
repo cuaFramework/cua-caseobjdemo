@@ -15,6 +15,7 @@ def singleton(cls):
         if key not in instances:
             instances[key] = cls(*args, **kwargs)
         return instances[key]
+
     return get_instance
 
 
@@ -29,6 +30,7 @@ if __name__ == "__main__":
         def print_test(self):
             print(self.test, self.test1)
 
+
     class1 = TestClass(1, test1=1)
     class2 = TestClass(1, test1=1)
     print(class1, class2)
@@ -39,6 +41,7 @@ if __name__ == "__main__":
 
     # 不使用singleton的情况
     from api import v2exapi
+
     aapi1 = v2exapi.Aapi("1")
     aapi2 = v2exapi.Aapi("1")
     print(aapi1, aapi2)

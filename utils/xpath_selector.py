@@ -34,4 +34,3 @@ if __name__ == '__main__':
     print(select_xpath('//ul[@id="useful"]/li/text()', text))
     print(select_xpath('//a/@href', text))
     print(select_xpath('//a/@title', text))
-

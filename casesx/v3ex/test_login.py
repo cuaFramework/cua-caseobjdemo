@@ -4,19 +4,19 @@ import unittest
 
 import utils.arbiter_logger
 from api.v2exapi import V2exapi
-from module.v2exapi.login_page import LoginPage
+from module.v2ex.login_page import LoginPage
 
 
 class TestLogin(unittest.TestCase):
     @classmethod
-    def setUpClass (self):
+    def setUpClass(self):
         test_env = "prod"
         self.v2exapi = V2exapi(test_env)
         self.login_page = LoginPage(test_env)
 
     @classmethod
     def tearDownClass(cls):
-      pass
+        pass
 
     def test_login(self):
         """V2EX登陆测试"""

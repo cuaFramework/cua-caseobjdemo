@@ -5,16 +5,18 @@
 
 import os
 import logging
-from config.config import LOG_DIR
+
+from config.config import BASE_DIR
 
 
 def log(mod_name):
     """ create  logger """
     logger = logging.getLogger(mod_name)
     logger.setLevel(level=logging.INFO)
-    handler = logging.FileHandler(os.path.join(LOG_DIR, "log.txt"))
+    handler = logging.FileHandler(os.path.join(BASE_DIR, "test.log"))
     handler.setLevel(logging.INFO)
-    formatter = logging.Formatter("%(asctime)s - %(levelname)s - [%(message)s] - at %(name)s.%(funcName)s(%(filename)s:%(lineno)d)")
+    formatter = logging.Formatter(
+        "%(asctime)s - %(levelname)s - [%(message)s] - at %(name)s.%(funcName)s(%(filename)s:%(lineno)d)")
     handler.setFormatter(formatter)
 
     console = logging.StreamHandler()
@@ -25,13 +27,15 @@ def log(mod_name):
     logger.info("log_begin")
     return logger
 
+
 def create_logger():
     """ create logger """
     logger = logging.getLogger(__name__)
     logger.setLevel(level=logging.INFO)
-    handler = logging.FileHandler(os.path.join(LOG_DIR, "log.txt"))
+    handler = logging.FileHandler(os.path.join(BASE_DIR, "test.log"))
     handler.setLevel(logging.INFO)
-    formatter = logging.Formatter("%(asctime)s - %(levelname)s - [%(message)s] - at %(name)s.%(funcName)s(%(filename)s:%(lineno)d)")
+    formatter = logging.Formatter(
+        "%(asctime)s - %(levelname)s - [%(message)s] - at %(name)s.%(funcName)s(%(filename)s:%(lineno)d)")
     handler.setFormatter(formatter)
 
     console = logging.StreamHandler()
@@ -40,5 +44,6 @@ def create_logger():
     logger.addHandler(handler)
     logger.addHandler(console)
     return logger
+
 
 LOGGER = create_logger()

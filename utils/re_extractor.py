@@ -11,6 +11,7 @@ def extract(pattern, string, index=1):
     search_obj = re.search(pattern=pattern, string=string)
     return search_obj.group(index) if search_obj else None
 
+
 if __name__ == '__main__':
     test = 'testsdg:"id":"1231234",dgdfg '
     print(extract(r'"id":"(\d+)",', test))
